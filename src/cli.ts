@@ -11,7 +11,10 @@ export const cli = meow(
  
     Examples
       $ can-i-rollup src/index.js
+      $ echo $?
+      # 1 or 0
       $ can-i-rollup --verbose src/index.js
+      # Output build 
 `,
     {
         flags: {
