@@ -1,0 +1,78 @@
+{
+  "name": "can-i-rollup",
+  "version": "1.0.0",
+  "description": "Rollup checker tool that try to rollup file.",
+  "keywords": [
+    "rollup",
+    "bundle",
+    "tool",
+    "cli"
+  ],
+  "homepage": "https://github.com/azu/can-i-rollup",
+  "bugs": {
+    "url": "https://github.com/azu/can-i-rollup/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azu/can-i-rollup.git"
+  },
+  "license": "MIT",
+  "author": "azu",
+  "sideEffects": false,
+  "main": "lib/can-i-rollup.js",
+  "module": "module/can-i-rollup.js",
+  "types": "lib/can-i-rollup.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "module"
+  ],
+  "scripts": {
+    "build": "tsc -p . && tsc --project ./tsconfig.module.json",
+    "clean": "rimraf lib/ module/",
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
+    "prepublish": "npm run --if-present build",
+    "test": "mocha \"test/**/*.ts\"",
+    "watch": "tsc -p . --watch"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": false,
+    "tabWidth": 4,
+    "trailingComma": "none"
+  },
+  "devDependencies": {
+    "@types/mocha": "^8.0.0",
+    "@types/node": "^14.0.25",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "mocha": "^8.0.1",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "textlint-util-to-string": "^3.0.0",
+    "ts-node": "^8.10.2",
+    "ts-node-test-register": "^8.0.1",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "meow": "^7.0.1",
+    "rollup": "^2.23.0"
+  }
+}
