@@ -10,7 +10,18 @@ Install with [npm](https://www.npmjs.com/):
 
 ## Usage
 
-- [ ] Write usage instructions
+    Usage
+      $ can-i-rollup src/index.js
+ 
+    Options
+      --verbose          Show verbose information
+ 
+    Examples
+      $ can-i-rollup src/index.js
+      $ echo $?
+      # 1 or 0
+      $ can-i-rollup --verbose src/index.js
+      # Output build 
 
 ## Changelog
 
